@@ -1,213 +1,140 @@
-body {
-background-color: #b5f4ff;
-font-family: Arial, sans-serif;
-color: #07040f;
-margin: 20px;
-}
-h1 {
-color: #ec89dc;
-text-align: center;
-background-color: #ffffff;
-}
-h2 {
-color: #eb0ceb;
-text-align: left;
-}
-p {
-font-size: 18px;
-text-align: left;
-line-height: 1.5;
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kontak Toko Buku</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+margin:0;
 }
 
-.daftar-produk {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    } 
-
-.produk {
-    background-color: #ffd3ff;
-    border: 1px solid #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0 ,0, 0, 0.1);
-    }
-
-.produk img {
-    width: 150px;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    }
-
-.produk h2 {
-    font-size: 20px;
-    color: #2c3e50;
-    }
-
-.produk h3 {
-    font-size: 16px;
-    color: #2c3e50;
-    }
-
-.harga {
-    font-weight: bold;
-    color: #27ae60;
-    }
-
-.deskripsi {
-    font-size: 14px;
-    color: #555;
-    }
-.artikel { 
-   max-width: 700px;
-   margin: auto;
-   padding: 20px;
-   background-color: #fdfdfd;
-   font-family: 'Georgia', serif;
-   line-height: 1.8;
- }
-.artikel .penulis {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 20px;
-    }
-.artikel .sampul {
-     width: 180px;
-    float: right;
-    margin: 0 0 20px 20px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    }
-.artikel blockquote {
-    font-style: italic; 
-    padding-left: 20px;
-    margin: 20px 0;
-    border-left: 4px solid #999;
-    color: #444;
-    background-color: #f9f9f9; 
- }
-.btn-kembali {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 16px;
-    background-color: #0066cc;
-    color: white; 
-    text-decoration: none;
-    border-radius: 4px;
- }
-.btn-kembali:hover {
-    background-color: #004d99;
- }
- .formulir {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fafafa;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(red, green, blue, alpha);
- }
- form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
- }
- form input,
- form select,
- form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
- }
- form button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
- }
- form button:hover {
-    background-color: #2980b9;
-
- }
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e8f0f7;
-    margin: 0;
-    padding: 0;
+/* NAVIGASI */
+nav{
+background:#2c3e50;
+padding:15px;
+text-align:center;
 }
 
-.contact-container {
-    width: 420px;           /* Lebar kotak form */
-    max-width: 90%;         /* Responsive di HP */
-    margin: 60px auto;
-    padding: 30px;
-    background-color: #fff;
-    border: 2px solid #3498db; /* Border biru */
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+nav a{
+color:white;
+text-decoration:none;
+margin:0 20px;
+font-size:18px;
+padding:8px 15px;
+border-radius:6px;
+transition:0.3s;
 }
 
-.contact-container h2 {
-    text-align: center;
-    color: #3498db;
-    margin-bottom: 25px;
-    font-size: 26px;
+nav a:hover{
+background:#3498db;
+transform:scale(1.1);
 }
 
-.contact-container form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #555;
+/* KOTAK KONTAK */
+
+.kontak-box{
+width:420px;
+max-width:90%;
+margin:60px auto;
+padding:25px;
+background:white;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+animation:muncul 1s ease;
 }
 
-.contact-container form input,
-.contact-container form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 18px;
-    border: 1px solid #3498db;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 14px;
+@keyframes muncul{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-.contact-container form textarea {
-    resize: vertical;
+h2{
+text-align:center;
+color:#3498db;
 }
 
-.contact-container button {
-    width: 100%;
-    padding: 12px;
-    background: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+h3{
+margin-top:20px;
 }
 
-.contact-container button:hover {
-    background-color: #217dbb;
+p{
+margin:6px 0;
 }
 
-.contact-container .back-link {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
+/* FORM */
+
+input, textarea{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:12px;
+border:1px solid #ccc;
+border-radius:6px;
 }
 
-.contact-container .back-link:hover {
-    text-decoration: underline;
+button{
+width:100%;
+padding:10px;
+background:#3498db;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
 }
+
+button:hover{
+background:#2980b9;
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="event.html">Event</a>
+<a href="kontak.html">Kontak</a>
+</nav>
+
+<div class="kontak-box">
+
+<h2>Kontak Kami</h2>
+
+<p><b>Nama Toko:</b> Toko Buku Najwah</p>
+<p><b>Alamat:</b> Jl. Kapasari No.12, Surabaya</p>
+<p><b>Telepon:</b> 0812-3456-7890</p>
+<p><b>Email:</b> tokobuku@email.com</p>
+
+<h3>Kirim Pesan</h3>
+
+<form>
+
+<input type="text" placeholder="Nama Anda">
+
+<input type="email" placeholder="Email Anda">
+
+<textarea rows="4" placeholder="Tulis pesan..."></textarea>
+
+<button type="submit">Kirim Pesan</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
+```
