@@ -2,88 +2,230 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-
-scale=1.0">
-<title>Profil Usaha Buku</title>
-<link rel="stylesheet" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bedah Buku - Toko Buku Najwah Febi</title>
+
+<style>
+/* ===== BODY ===== */
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin:0;
+  padding:0;
+  background: linear-gradient(135deg,#eef2f3,#fdf6f8);
+  color:#333;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  background:#2c3e50;
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-size:16px;
+  padding:8px 15px;
+  border-radius:6px;
+  position:relative;
+  transition:0.3s;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:3px;
+  bottom:0;
+  left:0;
+  background:#3498db;
+  transition:0.3s;
+  border-radius:2px;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+nav a:hover{
+  transform:translateY(-3px);
+}
+
+/* ===== HEADER ===== */
+header{
+  width:100%;
+  height:300px;
+  background:url('header 3.jpg') center/cover no-repeat;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  width:90%;
+  max-width:1000px;
+  margin:40px auto;
+}
+
+/* ===== ARTIKEL CARD ===== */
+.artikel{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom:40px;
+  position:relative;
+  overflow:hidden;
+  animation:muncul 0.8s ease forwards;
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.artikel:nth-child(1){animation-delay:0.1s;}
+.artikel:nth-child(2){animation-delay:0.3s;}
+.artikel:nth-child(3){animation-delay:0.5s;}
+
+@keyframes muncul{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  text-align:center;
+  color:#3498db;
+}
+
+h2{
+  color:#2c3e50;
+  margin-top:15px;
+}
+
+.penulis{
+  font-style:italic;
+  color:#777;
+  margin-bottom:15px;
+}
+
+.sampul{
+  width:200px;
+  float:right;
+  margin:0 0 20px 20px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+p{
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+blockquote{
+  font-style:italic;
+  padding:15px;
+  margin:20px 0;
+  border-left:5px solid #3498db;
+  background:#f0f8ff;
+  border-radius:8px;
+}
+
+/* ===== BUTTON ===== */
+.btn-kembali{
+  display:inline-block;
+  margin:20px auto;
+  padding:10px 18px;
+  background:#3498db;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.btn-kembali:hover{
+  background:#217dbb;
+  transform:scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:15px;
+  background:#2c3e50;
+  color:white;
+  margin-top:40px;
+  border-top:3px solid #3498db;
+}
+
+/* CLEAR FLOAT */
+.artikel::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .sampul{
+    float:none;
+    display:block;
+    margin:0 auto 20px auto;
+    width:80%;
+  }
+}
+</style>
 </head>
+
 <body>
-<nav> <a href="index.html">Beranda</a>
-    <a href="produk.html">Produk</a>
-    <a href="bedah-buku.html">Bedah Buku</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="tampil-testimoni.html">Testimoni Pembeli</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="event.html">Event</a>
+
+<nav>
+<a href="index.html">Beranda</a>
+<a href="produk.html">Produk</a>
+<a href="bedah-buku.html">Bedah Buku</a>
+<a href="testimoni.html">Testimoni</a>
+<a href="tampil-testimoni.html">Testimoni Pembeli</a>
+<a href="kontak.html">Kontak</a>
+<a href="event.html">Event</a>
 </nav>
-<section class="daftar-produk">
+
+<div class="container">
+
 <main class="artikel">
 <h1>Toko Buku Najwah Febi</h1>
-    <h2> Bedah buku : Negeri 5 Menara</h2>
-    <p class="penulis">Ditulis oleh : Ahmad Fuadi</p>
-    <img src="negeri 5 menara.jpg" alt="Sampul Negeri 5 Menara" class="sampul">
-    <p>
-        Buku ini menceritakan perjalanan hidup Alif,seorang anak Minang yang menempuh pendidikan di pondok pesantren Madani.
-        Awalnya penuh keraguan, namun perlahan Alif menemukan makna perjuangan, persahabatan, dan kekuatan impian.   
-    </p>
-    <blockquote>
-        "Man Jadda Wajada -Siapa yang bersunguh-sunguh,dia akan berhasil."
-    </blockquote>
-    <p> 
-        Kalimat itu menjadi semangat utama dalam buku ini.Kisah yang ditulis berdasarkan pengalaman nyata ini sangat menginspirasi,terutama bagi pelajar yang sedang mengejar mimpi mereka. Penulis berhasil menyampaikan pesan-pesan moral melalui narasi yang hidup.
-    </p>
-    <p> 
-        Buku ini cocok dibaca oleh remaja dan orang dewasa yang sedang mencari motivasi hidup. Cerita persahabatan, perjuangan, dan cinta belajar membuatnya menyentuh dan relevan bagi pembaca di berbagai usia. 
-    </p>
-    </main>
-    </section>
-    <section class="daftar-produk">
+<h2>Bedah Buku: Negeri 5 Menara</h2>
+<p class="penulis">Ditulis oleh: Ahmad Fuadi</p>
+<img src="negeri 5 menara.jpg" alt="Sampul Negeri 5 Menara" class="sampul">
+<p>Buku ini menceritakan perjalanan hidup Alif, seorang anak Minang yang menempuh pendidikan di pondok pesantren Madani. Awalnya penuh keraguan, namun perlahan Alif menemukan makna perjuangan, persahabatan, dan kekuatan impian.</p>
+<blockquote>"Man Jadda Wajada - Siapa yang bersungguh-sungguh, dia akan berhasil."</blockquote>
+<p>Buku ini cocok dibaca oleh remaja dan orang dewasa yang sedang mencari motivasi hidup.</p>
+</main>
+
 <main class="artikel">
-    <h2> Bedah buku : Hujan</h2>
-    <p class="penulis">Ditulis oleh : Tere Liye</p>
-    <img src="buku 13.jpg" alt="Sampul Hujan" class="sampul">
-    <p>
-        Novel ini menceritakan tentang Lail, seorang gadis yang menjadi yatim piatu akibat bencana alam dahsyat, dan Esok, seorang anak laki-laki cerdas yang menolongnya saat kejadian tersebut. Dari pertemuan itulah, hubungan mereka terjalin dan berkembang seiring waktu.
-    </p>
-    <blockquote>
-        "Esok mengajarkan bahwa kenangan tidak untuk dihapus, tetapi untuk diterima meski terasa perih."
-    </blockquote>
-    <p>
-        Kalimat ini mengandung pesan mendalam tentang cara menghadapi masa lalu dan kenangan. Hidup kita pasti dipenuhi dengan berbagai pengalaman—ada yang menyenangkan, ada pula yang menyakitkan. Kalimat ini mengajarkan kita tidak perlu berusaha menghapus atau melupakan kenangan yang menyakitkan, karena itu merupakan bagian dari perjalanan hidup. Sebaliknya, kita diajak untuk menerima kenangan tersebut dengan lapang dada, meskipun awalnya terasa perih atau menyedihkan.
-    </p>
-    <p>
-        Buku ini cocok untuk remaja dan dewasa muda yang ingin belajar tentang kehidupan dan keikhlasan & pembaca yang menyukai cerita romantis dan melankolis.
-    </p>
+<h2>Bedah Buku: Hujan</h2>
+<p class="penulis">Ditulis oleh: Tere Liye</p>
+<img src="buku 13.jpg" alt="Sampul Hujan" class="sampul">
+<p>Novel ini menceritakan tentang Lail, seorang gadis yatim piatu akibat bencana alam, dan Esok, seorang anak laki-laki cerdas yang menolongnya. Hubungan mereka berkembang seiring waktu.</p>
+<blockquote>"Esok mengajarkan bahwa kenangan tidak untuk dihapus, tetapi untuk diterima meski terasa perih."</blockquote>
+<p>Buku ini cocok untuk remaja dan dewasa muda yang ingin belajar tentang kehidupan dan keikhlasan.</p>
 </main>
-    </section>
-    <section class="daftar-produk">
+
 <main class="artikel">
-    <h2>Bedah buku: Dompet ayah sepatu ibu</h2>
-    <p class="penulis">Ditulis oleh : J.S. Khairen</p>
-    <img src="buku 11.jpg" alt="Sampul dompet ayah sepatu ibu" class="sampul">
-    <p>
-         Perjuangan emosional dua tokoh, Zenna dan Asrul, dalam meruntuhkan rantai kemiskinan di Sumatera Barat. Buku ini menarasikan kasih sayang orang tua yang bekerja dalam diam, pengorbanan, serta tekad anak untuk meraih mimpi demi membahagiakan keluarganya, terinspirasi dari kisah nyata. 
-    </p>
-    <blockquote>
-        "Dompet Ayah, Ibu Sepatu mengajarkan bahwa dari kekurangan dan kehilangan, lahir kekuatan untuk terus melangkah dan mengubah nasib dengan kerja keras serta cinta keluarga."
-    </blockquote>
-    <p>
-        Kalimat ini menjelaskan bahwa keterbatasan dan kehilangan dalam hidup tidak selalu melemahkan, justru bisa menjadi sumber kekuatan. Melalui kerja keras dan cinta keluarga, seseorang mampu bangkit, bertahan, dan mengubah nasibnya menjadi lebih baik.
-    </p>
-    <p>
-        Buku ini cocok untuk pembaca yang menyukai kisah perjuangan hidup, cerita keluarga yang menyentuh, serta mereka yang sedang mencari motivasi, harapan, dan makna ketabahan dalam keterbatasan.
-    </p>
+<h2>Bedah Buku: Dompet Ayah Sepatu Ibu</h2>
+<p class="penulis">Ditulis oleh: J.S. Khairen</p>
+<img src="buku 11.jpg" alt="Sampul Dompet Ayah Sepatu Ibu" class="sampul">
+<p>Perjuangan emosional Zenna dan Asrul dalam menghadapi kemiskinan di Sumatera Barat. Buku ini menarasikan kasih sayang orang tua yang bekerja dalam diam, pengorbanan, dan tekad anak untuk meraih mimpi demi keluarga.</p>
+<blockquote>"Dompet Ayah, Ibu Sepatu mengajarkan bahwa dari kekurangan dan kehilangan, lahir kekuatan untuk terus melangkah dan mengubah nasib."</blockquote>
+<p>Cocok untuk pembaca yang menyukai kisah perjuangan hidup dan cerita keluarga yang menyentuh.</p>
 </main>
-    </section>
-<a href="produk.html" class="btn-kembali"> Kembali ke Katalog</a>
-</main>
-</section>
+
+<a href="produk.html" class="btn-kembali">Kembali ke Katalog</a>
+
+</div>
+
 <footer>
-    <p>&copy; 2026 Toko Buku Najwah Febi </p> 
+<p>&copy; 2026 Toko Buku Najwah Febi</p>
 </footer>
+
 </body>
-
 </html>
-
-
-
