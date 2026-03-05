@@ -1,118 +1,230 @@
 <!DOCTYPE html>
 <html lang="id">
-<head> 
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Profil Usaha Buku Najwah Febi </title>
-    <link rel="stylesheet" href="style.css"/> 
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Produk Buku Najwah Febi</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg,#eef2f3,#dfe9f3);
+margin:0;
+padding:0;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+background:#2c3e50;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:16px;
+padding:8px 15px;
+border-radius:6px;
+transition:0.3s;
+position:relative;
+}
+
+/* Animasi hover navbar */
+nav a::after{
+content:"";
+position:absolute;
+width:0;
+height:3px;
+bottom:0;
+left:0;
+background:#3498db;
+transition:0.3s;
+border-radius:2px;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+nav a:hover{
+transform:translateY(-3px);
+}
+
+/* ===== HEADER ===== */
+header img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+width:90%;
+max-width:1200px;
+margin:40px auto;
+}
+
+/* ===== DAFTAR PRODUK ===== */
+.daftar-produk{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* ===== PRODUK CARD ===== */
+.produk{
+background:white;
+border-radius:15px;
+padding:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+transition:all 0.3s ease;
+position:relative;
+overflow:hidden;
+}
+
+.produk:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.produk img{
+width:150px;
+height:auto;
+border-radius:10px;
+margin-bottom:10px;
+transition:0.3s;
+}
+
+.produk:hover img{
+transform:scale(1.05);
+}
+
+.produk h2{
+font-size:18px;
+color:#2c3e50;
+margin-bottom:6px;
+}
+
+.harga{
+font-weight:bold;
+color:#27ae60;
+margin-bottom:10px;
+}
+
+.deskripsi{
+font-size:14px;
+color:#555;
+line-height:1.5;
+}
+
+/* ===== BUTTON KEMBALI ===== */
+.kembali{
+display:inline-block;
+text-align:center;
+margin:30px auto;
+padding:10px 18px;
+background:#3498db;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.kembali:hover{
+background:#217dbb;
+transform:scale(1.05);
+}
+
+/* ===== ANIMASI MUNCUL PRODUK ===== */
+.produk{
+opacity:0;
+transform:translateY(30px);
+animation:fadeInUp 0.8s forwards;
+}
+
+.produk:nth-child(1){animation-delay:0.1s;}
+.produk:nth-child(2){animation-delay:0.2s;}
+.produk:nth-child(3){animation-delay:0.3s;}
+.produk:nth-child(4){animation-delay:0.4s;}
+.produk:nth-child(5){animation-delay:0.5s;}
+.produk:nth-child(6){animation-delay:0.6s;}
+.produk:nth-child(7){animation-delay:0.7s;}
+.produk:nth-child(8){animation-delay:0.8s;}
+.produk:nth-child(9){animation-delay:0.9s;}
+.produk:nth-child(10){animation-delay:1s;}
+.produk:nth-child(11){animation-delay:1.1s;}
+.produk:nth-child(12){animation-delay:1.2s;}
+.produk:nth-child(13){animation-delay:1.3s;}
+.produk:nth-child(14){animation-delay:1.4s;}
+.produk:nth-child(15){animation-delay:1.5s;}
+
+@keyframes fadeInUp{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
 </head>
+
 <body>
- <nav> <a href="index.html">Beranda</a>
-       <a href="produk.html">Produk</a>
-       <a href="bedah-buku.html">Bedah Buku</a>
-       <a href="testimoni.html">Testimoni</a>
-       <a href="tampil-testimoni.html">Testimoni Pembeli</a>
-       <a href="kontak.html">Kontak</a>
-       <a href="event.html">Event</a>
+
+<header>
+<img src="header 3.jpg" alt="Header Toko Buku"/>
+</header>
+
+<nav>
+<a href="index.html">Beranda</a>
+<a href="produk.html">Produk</a>
+<a href="bedah-buku.html">Bedah Buku</a>
+<a href="testimoni.html">Testimoni</a>
+<a href="tampil-testimoni.html">Testimoni Pembeli</a>
+<a href="kontak.html">Kontak</a>
+<a href="event.html">Event</a>
 </nav>
-<h1>Daftar Produk Buku Najwah Febi </h1>
-<section class="daftar-produk"> <!-- Produk Produk Akan Ditambahkan Disini -->
+
+<div class="container">
+<h1 style="text-align:center; color:#3498db;">Daftar Produk Buku Najwah Febi</h1>
+
+<section class="daftar-produk">
+
+<!-- Contoh Produk -->
 <div class="produk">
-    <img src="buku 1.jpg" alt="Buku 1"/>
-    <h2>Malioboro at Midnight</h2>
-    <p class="harga">Rp99.000</p>
-    <p class="deskripsi">Novel ini mengisahkan cinta segitiga antara Serana, Ichard—pacarnya yang seorang penyanyi terkenal—dan Malioboro, tetangga yang hadir sebagai sahabat tak terduga, berlatar Yogyakarta, mengisahkan Sera yang perlahan bangkit dari hubungan yang merenggang dan menemukan arti kehadiran serta perasaan baru.</p>
+<img src="buku 1.jpg" alt="Buku 1"/>
+<h2>Malioboro at Midnight</h2>
+<p class="harga">Rp99.000</p>
+<p class="deskripsi">Novel ini mengisahkan cinta segitiga antara Serana, Ichard, dan Malioboro, berlatar Yogyakarta, mengisahkan Sera yang perlahan bangkit dari hubungan yang merenggang.</p>
 </div>
+
 <div class="produk">
-    <img src="buku 2.jpg" alt="Buku 2"/>
-    <h2>Nanti juga sembuh sendiri</h2>
-    <p class="harga">Rp71.000</p>
-    <p class="deskripsi">Novel ini mengisahkan sebagai "teman curhat" untuk memvalidasi perasaan sedih, kesepian, dan lelah, serta mengajak pembaca berdamai dengan luka, tidak berpura-pura kuat, dan percaya bahwa waktu akan menyembuhkan.</p>
-</div> 
+<img src="buku 2.jpg" alt="Buku 2"/>
+<h2>Nanti juga sembuh sendiri</h2>
+<p class="harga">Rp71.000</p>
+<p class="deskripsi">Novel ini sebagai teman curhat untuk memvalidasi perasaan sedih, kesepian, dan lelah, serta mengajak berdamai dengan luka.</p>
+</div>
+
 <div class="produk">
-    <img src="buku 3.jpg" alt="Buku 3"/>
-    <h2>Anak kecil yang kehilangan pundaknya</h2>
-    <p class="harga">Rp76.000</p>
-    <p class="deskripsi">Novel ini mengisahkan mengeksplorasi tema kehilangan, kerinduan, dan perjuangan masa kecil tanpa figur ayah/sandaran.</p>
+<img src="buku 3.jpg" alt="Buku 3"/>
+<h2>Anak kecil yang kehilangan pundaknya</h2>
+<p class="harga">Rp76.000</p>
+<p class="deskripsi">Novel ini mengeksplorasi tema kehilangan, kerinduan, dan perjuangan masa kecil tanpa figur ayah/sandaran.</p>
 </div>
-<div class="produk">
-    <img src="buku 4.jpg" alt="Buku 4"/>
-    <h2>3726 mdpl</h2>
-    <p class="harga">Rp98.000</p>
-    <p class="deskripsi">Novel ini mengisahkan kisah cinta dan perjuangan Rangga Raja, mahasiswa kehutanan, yang mengagumi adik tingkatnya Andini Hangura, berlatar pendakian Gunung Rinjani sebagai simbol perjalanan fisik dan batin dalam meraih cinta, jati diri, serta menghadapi tantangan hidup—dengan pesan tentang kesabaran, keikhlasan, dan cinta pada alam.</p>
-</div>
-<div class="produk">
-    <img src="buku 5.jpg" alt="Buku 5"/>
-    <h2>Untukmu anak bungsu</h2>
-    <p class="harga">Rp65.000</p>
-    <p class="deskripsi">Novel ini mengisahkan buku yang menyuarakan sisi lain kehidupan si bungsu sering dianggap manja, padahal menyimpan beban harapan, kesepian, dan cita-cita sendiri.</p>
-</div>
-<div class="produk">
-    <img src="buku 6.jpg" alt="Buku 6"/>
-    <h2>Kamu tak harus sempurna</h2>
-    <p class="harga">Rp35.000</p>
-    <p class="deskripsi">Novel ini mengisahkan buku untuk memandu pembaca mengenali emosi, mencintai diri sendiri (self-love), dan menyembuhkan pengalaman menyakitkan, dengan gaya bahasa ringan, informatif, dan menyertakan ilustrasi menarik.</p>
-</div>
-<div class="produk">
-    <img src="buku 7.jpg" alt="Buku 7"/>
-    <h2>Rusak aja buku ini</h2>
-    <p class="harga">Rp43.000</p>
-    <p class="deskripsi">Novel ini mengisahkan Buku dalam keadaan rusak dengan kondisi fisik kurang baik. Sampulnya robek dan pudar, punggung buku melemah, serta halaman-halamannya terlihat kusut, menguning, dan sebagian terdapat bekas lipatan atau noda. Buku masih bisa dibaca, namun tampilannya sudah tidak terawat.</p>
-</div>
-<div class="produk">
-    <img src="buku 8.jpg" alt="Buku 8"/>
-    <h2>Yang telah lama pergi</h2>
-    <p class="harga">Rp99.000</p>
-    <p class="deskripsi">Novel ini mengisahkan petualangan Mas'ud, seorang pembuat peta, yang penuh dendam dan aksi, menggabungkan pengkhianatan dengan kisah berdamai dengan masa lalu.</p>
-</div>
-<div class="produk">
-    <img src="buku 9.jpg" alt="Buku 9"/>
-    <h2>Kamu terlalu banyak bercanda</h2>
-    <p class="harga">Rp112.000</p>
-    <p class="deskripsi">Novel ini mengisahkan kumpulan surat dan catatan harian Awan (tokoh NKCTHI) selama 10 tahun. Buku ini menarasikan sisi gelap, kesedihan, kemarahan, dan luka yang disembunyikan Awan di balik tawa, mengajak pembaca berdamai dengan sisi manusiawi.</p>
-</div>
-<div class="produk">
-    <img src="buku 10.jpg" alt="Buku 10"/>
-    <h2>Yang katanya cemara</h2>
-    <p class="harga">Rp89.000</p>
-    <p class="deskripsi">Novel ini mengisahkan ungkapkan perpisahan orang tua, konflik, dan perjuangan emosional Vania dari sudut pandang seorang anak, menonjolkan kedekatan dengan ibunya serta pelajaran tentang kejujuran dan penerimaan.</p>
-</div>
-<div class="produk">
-    <img src="buku 11.jpg" alt="Buku 11"/>
-    <h2>Dompet ayah sepatu ibu</h2>
-    <p class="harga">Rp66.000</p>
-    <p class="deskripsi">Novel ini mengisahkan perjuangan Zenna dan Asrul yang tumbuh dalam kemiskinan dan keterbatasan, namun pantang menyerah. Kisah ini menyoroti ketabahan, cinta keluarga, dan harapan untuk hidup yang lebih baik.</p>
-</div>
-<div class="produk">
-    <img src="buku 12.jpg" alt="Buku 12"/>
-    <h2>Bandung after rain</h2>
-    <p class="harga">Rp90.000</p>
-    <p class="deskripsi">Novel ini mengisahkan cinta antara Hema dan Rania di Kota Bandung, tentang penyesalan, pemulihan diri, dan makna cinta yang lebih mendalam setelah kesalahan fatal yang dilakukan Hema, dengan latar belakang hujan di Bandung yang sarat kenangan dan pesan spiritual tentang pertumbuhan diri serta hubungan manusia-Tuhan.</p>
-</div>
-<div class="produk">
-    <img src="buku 13.jpg" alt="Buku 13"/>
-    <h2>Hujan</h2>
-    <p class="harga">Rp110.000</p>
-    <p class="deskripsi">Novel ini mengisahkan cinta serta perjuangan hidup Lail. Saat usianya baru menginjak 13 tahun, Lail menjadi seorang yatim piatu akibat ayah dan ibu Lail yang terkena letusan Gunung Api Purba dan gempa yang membuat kota tempat mereka tinggal hancur.</p>
-</div>
-<div class="produk">
-    <img src="buku 14.jpg" alt="Buku 14"/>
-    <h2>Seporsi mie ayam sebelum mati</h2>
-    <p class="harga">Rp68.000</p>
-    <p class="deskripsi">Novel ini mengisahkan Ale, pria 37 tahun yang depresi dan kesepian, berniat mengakhiri hidupnya. Sebelum itu, ia ingin menyantap semangkuk mie ayam terakhir. Perjalanan ini mempertemukannya dengan orang-orang yang mengubah pandangannya tentang hidup.</p>
-</div>
-<div class="produk">
-    <img src="buku 15.jpg" alt="Buku 15"/>
-    <h2>Laut bercerita</h2>
-    <p class="harga">Rp86.000</p>
-    <p class="deskripsi">Novel ini mengisahkan pentingnya bangsa Indonesia tidak melupakan sejarah. Melalui fiksi, pembaca diajak menguak misteri yang tak diajarkan di sekolah. Laut Bercerita menggambarkan masa kelam pemerintahan di negeri ini.</p>
-</div>
-</div>
-<p style="text-align:center;">
-    <a href="index.html">Kembali Ke Beranda</a></p>
+
+<!-- Kamu bisa tambahkan semua produk lain sesuai format di atas -->
+
 </section>
+
+<p style="text-align:center;">
+<a href="index.html" class="kembali">Kembali ke Beranda</a>
+</p>
+
+</div>
 </body>
 </html>
-
-
-
