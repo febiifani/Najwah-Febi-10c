@@ -134,4 +134,80 @@ line-height: 1.5;
  }
  form button:hover {
     background-color: #2980b9;
+
  }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8f0f7;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    width: 420px;           /* Lebar kotak form */
+    max-width: 90%;         /* Responsive di HP */
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 2px solid #3498db; /* Border biru */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+    text-align: center;
+    color: #3498db;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.contact-container form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
+
+.contact-container form input,
+.contact-container form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #3498db;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.contact-container form textarea {
+    resize: vertical;
+}
+
+.contact-container button {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-container button:hover {
+    background-color: #217dbb;
+}
+
+.contact-container .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.contact-container .back-link:hover {
+    text-decoration: underline;
+}
