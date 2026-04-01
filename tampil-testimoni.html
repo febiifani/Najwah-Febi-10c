@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,18 +16,31 @@ background:linear-gradient(135deg,#eef2f3,#dfe9f3);
 color:#333;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== HEADER ===== */
+header img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+/* ===== NAVBAR (SAMA SEPERTI KODINGAN KAMU) ===== */
 nav{
-margin-top:10px;
+background:#2c3e50;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin:0 15px;
+font-size:16px;
 padding:8px 15px;
 border-radius:6px;
-font-size:16px;
 position:relative;
 transition:0.3s;
 }
@@ -35,10 +49,10 @@ transition:0.3s;
 nav a::after{
 content:"";
 position:absolute;
-left:0;
-bottom:-4px;
 width:0;
 height:3px;
+left:0;
+bottom:-4px;
 background:#3498db;
 transition:0.3s;
 }
@@ -48,15 +62,15 @@ width:100%;
 }
 
 nav a:hover{
-color:#3498db;
 transform:translateY(-2px);
+color:#3498db;
 }
 
-/* ===== HEADER ===== */
-header img{
-width:100%;
-height:300px;
-object-fit:cover;
+/* ===== JUDUL ===== */
+h1{
+text-align:center;
+margin-top:30px;
+color:#2c3e50;
 }
 
 /* ===== CONTAINER ===== */
@@ -71,10 +85,10 @@ animation:muncul 0.8s ease;
 }
 
 @keyframes muncul{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
 }
-  
+
 /* ===== TESTIMONI CARD ===== */
 .testimoni-box{
 background:#f9fbff;
@@ -89,6 +103,12 @@ transition:0.3s;
 .testimoni-box:hover{
 transform:translateY(-4px);
 box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* ===== RATING BINTANG ===== */
+.bintang{
+color:gold;
+font-size:18px;
 }
 
 /* ===== BUTTON ===== */
@@ -123,7 +143,7 @@ margin-top:40px;
 </head>
 
 <body>
-  
+
 <header>
 <img src="header 3.jpg" alt="Header Toko Buku"/>
 </header>
@@ -161,6 +181,16 @@ const container = document.getElementById('daftarTestimoni');
 const testimoniList =
 JSON.parse(localStorage.getItem('testimoniList')) || [];
 
+/* fungsi bintang */
+function buatBintang(rating){
+let jumlah = Math.round(rating / 2);
+let hasil = "";
+for(let i=0;i<jumlah;i++){
+hasil += "⭐";
+}
+return hasil;
+}
+
 if(testimoniList.length === 0){
 
 container.innerHTML = "<p>Belum ada testimoni.</p>";
@@ -170,7 +200,6 @@ container.innerHTML = "<p>Belum ada testimoni.</p>";
 testimoniList.forEach((t)=>{
 
 const el = document.createElement('div');
-
 el.className = "testimoni-box";
 
 el.innerHTML = `
@@ -179,7 +208,7 @@ el.innerHTML = `
 <p><strong>Pesan:</strong> ${t.pesan}</p>
 <p><strong>Asal:</strong> ${t.asal}</p>
 <p><strong>Judul Buku:</strong> ${t.Judul}</p>
-<p><strong>Rating:</strong> ${t.rating}</p>
+<p><strong>Rating:</strong> <span class="bintang">${buatBintang(t.rating)}</span></p>
 `;
 
 container.appendChild(el);
@@ -193,11 +222,8 @@ document.getElementById("hapusSemua").addEventListener("click",function(){
 const konfirmasi = confirm("Apakah anda yakin ingin menghapus semua testimoni?");
 
 if(konfirmasi){
-
 localStorage.removeItem("testimoniList");
-
 location.reload();
-
 }
 
 });
@@ -206,5 +232,4 @@ location.reload();
 
 </body>
 </html>
-
-
+```
