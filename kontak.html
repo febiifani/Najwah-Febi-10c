@@ -3,19 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontak - Toko Buku Najwah Febi</title>
+<title>Beranda - Toko Buku Najwah Febi</title>
 
 <style>
 
 /* ===== BODY ===== */
 body{
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 margin:0;
 background:linear-gradient(135deg,#eef2f3,#dfe9f3);
 color:#333;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== HEADER ===== */
+header img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+/* ===== NAVBAR (SAMA) ===== */
 nav{
 background:#2c3e50;
 padding:15px;
@@ -34,7 +41,6 @@ position:relative;
 transition:0.3s;
 }
 
-/* animasi garis */
 nav a::after{
 content:"";
 position:absolute;
@@ -55,76 +61,71 @@ color:#3498db;
 transform:translateY(-2px);
 }
 
-/* ===== HEADER ===== */
-header img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-/* ===== CONTAINER ===== */
-.container{
-width:420px;
-margin:50px auto;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-animation:muncul 0.8s ease;
-}
-
-@keyframes muncul{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* ===== JUDUL ===== */
-h2{
+/* ===== HERO ===== */
+.hero{
 text-align:center;
+padding:60px 20px;
+animation:muncul 1s ease;
+}
+
+.hero h1{
+font-size:36px;
 color:#2c3e50;
 }
 
-/* ===== INPUT ===== */
-input, textarea{
-width:100%;
-padding:8px;
-border-radius:6px;
-border:1px solid #ccc;
-margin-top:5px;
-margin-bottom:15px;
-font-size:14px;
+.hero p{
+font-size:18px;
+color:#555;
+max-width:600px;
+margin:10px auto;
 }
 
-/* ===== BUTTON ===== */
-button{
-width:100%;
-padding:10px;
-background:#3498db;
-border:none;
-color:white;
-font-size:15px;
-border-radius:6px;
-cursor:pointer;
+/* ===== ANIMASI ===== */
+@keyframes muncul{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== FITUR ===== */
+.fitur{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+text-align:center;
 transition:0.3s;
 }
 
-button:hover{
-background:#2980b9;
-transform:scale(1.03);
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* ===== STORE INFO ===== */
-.store-info{
-background:#f7f9fc;
-padding:15px;
-border-radius:8px;
-margin-bottom:20px;
+.card h3{
+color:#3498db;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 15px;
+background:#3498db;
+color:white;
+text-decoration:none;
+border-radius:6px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#2980b9;
 }
 
 /* ===== FOOTER ===== */
@@ -142,9 +143,8 @@ margin-top:40px;
 <body>
 
 <header>
-<img src="header 3.jpg" alt="Header Toko Buku"/>
+<img src="header 3.jpg" alt="Header Toko Buku">
 </header>
-
 
 <nav>
 <a href="index.html">Beranda</a>
@@ -156,33 +156,38 @@ margin-top:40px;
 <a href="event.html">Event</a>
 </nav>
 
-<div class="container">
+<section class="hero">
+<h1>Selamat Datang di Toko Buku Najwah Febi</h1>
+<p>Temukan berbagai buku menarik, inspiratif, dan edukatif untuk menambah wawasan dan menemani harimu 📚</p>
+</section>
 
-<h2>Kontak Kami</h2>
+<section class="fitur">
 
-<div class="store-info">
-<p><strong>Nama Toko:</strong> Toko Buku Najwah Febi</p>
-<p><strong>Alamat:</strong> Jl. Kapasari No.12, Surabaya, Indonesia</p>
-<p><strong>Telepon:</strong> +62 812-3456-7890</p>
-<p><strong>Email:</strong> info@tokonajwah.com</p>
+<div class="card">
+<h3>📖 Produk Buku</h3>
+<p>Koleksi buku lengkap dari novel, pelajaran, hingga motivasi.</p>
+<a href="produk.html" class="btn">Lihat Produk</a>
 </div>
 
-<form>
-
-<label>Nama</label>
-<input type="text" name="nama" placeholder="Nama Lengkap" required>
-
-<label>Email</label>
-<input type="email" name="email" placeholder="email@example.com" required>
-
-<label>Pesan</label>
-<textarea name="pesan" rows="5" placeholder="Tulis pesan anda..." required></textarea>
-
-<button type="submit">Kirim Pesan</button>
-
-</form>
-
+<div class="card">
+<h3>📚 Bedah Buku</h3>
+<p>Pelajari isi buku secara singkat dan menarik.</p>
+<a href="bedah-buku.html" class="btn">Lihat Bedah Buku</a>
 </div>
+
+<div class="card">
+<h3>💬 Testimoni</h3>
+<p>Lihat pengalaman pembeli lain atau beri ulasanmu.</p>
+<a href="testimoni.html" class="btn">Beri Testimoni</a>
+</div>
+
+<div class="card">
+<h3>📞 Kontak</h3>
+<p>Hubungi kami untuk informasi dan pemesanan buku.</p>
+<a href="kontak.html" class="btn">Hubungi Kami</a>
+</div>
+
+</section>
 
 <footer>
 <p>&copy; 2026 Toko Buku Najwah Febi</p>
@@ -190,4 +195,3 @@ margin-top:40px;
 
 </body>
 </html>
-
